@@ -7,9 +7,9 @@ cors = require('cors');
 bodyParser = require('body-parser');
 methodOverride = require('method-override');
 async = require('async');
-mongoose = require('mongoose');
-mongoose.Promise = require('bluebird');
-moment = require('moment');
+// mongoose = require('mongoose');
+// mongoose.Promise = require('bluebird');
+// moment = require('moment');
 qs = require('qs');
 // config = require('./config');
 
@@ -62,7 +62,6 @@ app.use(cors({
     origin: ['http://home2.sg.uobnet.com'],
     credentials: true
 }));
-
 app.get('/', function(req, res){
     res.json('home');
 });
@@ -92,7 +91,7 @@ process.on('uncaughtException', function (err) {
 process.on( 'SIGINT', function() {
     //shutting down
     console.log('Shutting down MongoDB connection');
-    mongoose.connection.close();
+    // mongoose.connection.close();
 
     // some other closing procedures go here
     console.log('Exiting');
